@@ -10,7 +10,7 @@ export const sendVerificationCode = async (email, verificationCode) => {
     }
 
     const response = await transporter.sendMail({
-      from: `"Stayzio 👻" <${process.env.EMAIL}>`, // sender address
+      from: `"LiteFit 👻" <${process.env.EMAIL}>`, // sender address
       to: email, // list of receivers
       subject: "Email Verification Code", // Subject line
       text: "Verify your email.", // plain text body
