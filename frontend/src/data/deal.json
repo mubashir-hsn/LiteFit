@@ -1,0 +1,147 @@
+[
+    {
+      "name": "Evening Gown",
+      "category": "dress",
+      "description": "This elegant evening gown is designed for special occasions, offering a sophisticated and graceful look. The rich red color is perfect for standing out at events. The flowing fabric adds a dramatic flair, while the fitted design flatters your silhouette. Ideal for weddings, formal parties, or high-end dinners.",
+      "price": 149.99,
+      "oldPrice": 199.99,
+      "image": "https://zoyahussain.com/cdn/shop/products/aa_1.jpg?v=1634652838&width=533",
+      "color": "white",
+      "rating": 4.0,
+      "gent": "women",
+      "deal": "deal"
+    },
+    {
+      "name": "Floral Summer Dress",
+      "category": "dress",
+      "description": "A breezy and comfortable summer dress with a vibrant floral pattern. Its lightweight material and flowing design make it perfect for casual outings or picnics.",
+      "price": 89.99,
+      "oldPrice": 129.99,
+      "image": "https://www.panacheapparels.com/cdn/shop/files/DSC05615.jpg?v=1690897665&width=1000",
+      "color": "blue",
+      "rating": 4.2,
+      "gent": "black",
+      "deal": "deal"
+    },
+    {
+      "name": "Black Cocktail Dress",
+      "category": "dress",
+      "description": "This sleek black cocktail dress is a wardrobe staple, offering a flattering fit with a hint of elegance. Perfect for evening parties and formal events.",
+      "price": 129.99,
+      "oldPrice": 169.99,
+      "image": "https://i.etsystatic.com/20862104/r/il/635e60/2961196215/il_fullxfull.2961196215_njql.jpg",
+      "color": "black",
+      "rating": 4.5,
+      "gent": "women",
+      "deal": "deal"
+    },
+    {
+      "name": "Knee-Length Casual Dress",
+      "category": "dress",
+      "description": "A casual knee-length dress made with soft, breathable fabric. It’s perfect for daily wear, offering comfort without compromising on style.",
+      "price": 59.99,
+      "oldPrice": 79.99,
+      "image": "https://www.dressyzone.com/cdn/shop/files/p14230-embroidered-net-maxi-dress-update_2048x.jpg?v=1722245277",
+      "color": "white",
+      "rating": 4.3,
+      "gent": "women",
+      "deal": "deal"
+    },
+    {
+      "name": "Maxi Dress",
+      "category": "dress",
+      "description": "A flowing maxi dress with an elegant cut and bold design. This dress is a versatile piece suitable for beach vacations or casual parties.",
+      "price": 74.99,
+      "oldPrice": 99.99,
+      "image": "https://malbus.com.pk/cdn/shop/files/sensation-maxi-dress_1080x.jpg?v=1709019258",
+      "color": "pink",
+      "rating": 4.1,
+      "gent": "women",
+      "deal": "deal"
+    },
+    {
+      "name": "Multi-pocket Bag",
+      "category": "accessories",
+      "description": "A premium Multi-pocket Chest Bag with multiple compartments for organization. Its stylish design makes it perfect for both casual and formal use.",
+      "price": 39.99,
+      "oldPrice": 49.99,
+      "image": "https://www.nextatlanticbd.com/img/product-sale.png",
+      "color": "brown",
+      "rating": 4.6,
+      "gent": "men",
+      "deal": "deal"
+    },
+    {
+      "name": "Gold Plated Earrings",
+      "category": "accessories",
+      "description": "Elegant gold-plated earrings designed to add a touch of luxury to any outfit. Lightweight and comfortable to wear all day.",
+      "price": 49.99,
+      "oldPrice": 69.99,
+      "image": "https://paksha.in/cdn/shop/files/PMPC0007D_9738d704-4661-42b5-9c8e-eb8a0ce5fa25_2000x.jpg?v=1706955634",
+      "color": "gold",
+      "rating": 4.7,
+      "gent": "women",
+      "deal": "deal"
+    },
+    {
+      "name": "Statement Necklace",
+      "category": "accessories",
+      "description": "A bold statement necklace featuring intricate design work, perfect for enhancing any formal attire.",
+      "price": 89.99,
+      "oldPrice": 109.99,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbVPn3dJlkEarGE4yK3JMsnrHo0McVMabV0g&s",
+      "color": "golden",
+      "rating": 4.8,
+      "gent": "women",
+      "deal": "deal"
+    },
+    {
+      "name": "Silk Scarf",
+      "category": "accessories",
+      "description": "A soft silk scarf with a vibrant print, adding a pop of color and style to any outfit. Ideal for layering in cooler weather.",
+      "price": 34.99,
+      "oldPrice": 49.99,
+      "image": "https://static-01.daraz.pk/p/46c0bccfe14083f7404c9f3bc9ec7921.jpg",
+      "color": "red",
+      "rating": 4.4,
+      "gent": "women",
+      "deal": "deal"
+    },
+    {
+      "name": "Classic Sunglasses",
+      "category": "accessories",
+      "description": "Stylish and functional sunglasses with UV protection, ideal for sunny days. Their timeless design suits all face shapes.",
+      "price": 79.99,
+      "oldPrice": 99.99,
+      "image": "https://negativeapparel.com/cdn/shop/products/3pairs-women-cat-eye-frame-sunglasses-negative-apparel-664103.jpg?v=1709149023&width=1340",
+      "color": "black",
+      "rating": 4.3,
+      "gent": "women",
+      "deal": "deal"
+    },
+    {
+      "name": "High-Heel Sandals",
+      "category": "footwear",
+      "description": "Elegant high-heel sandals with a sleek design, perfect for pairing with formal dresses. Comfortable and durable for long hours.",
+      "price": 99.99,
+      "oldPrice": 129.99,
+      "image": "https://1ststep.pk/cdn/shop/files/skyline_maroon_high_heel_sandals_0421072_1_800x.webp?v=1727889947",
+      "color": "black",
+      "rating": 4.5,
+      "gent": "women",
+      "deal": "deal"
+    },
+    {
+      "name": "Casual Sneakers",
+      "category": "footwear",
+      "description": "Trendy and comfortable sneakers for daily wear. These shoes are versatile and stylish, designed for all-day support.",
+      "price": 69.99,
+      "oldPrice": 89.99,
+      "image": "https://www.borjan.com.pk/cdn/shop/products/1_b2fe6a56-f689-40b0-9841-eff9ab44d9fd.png?v=1703844610",
+      "color": "pink",
+      "rating": 4.2,
+      "gent": "women",
+      "deal": "deal"
+    }
+  ]
+  
