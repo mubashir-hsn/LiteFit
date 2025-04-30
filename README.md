@@ -38,7 +38,7 @@ bash
 Copy
 Edit
 # Clone the repository
-git clone https://github.com/your-username/clothing-mern-website.git
+git clone https://github.com/mubashir-hsn/LiteFit.git
 
 # Navigate to the project
 cd clothing-mern-website
