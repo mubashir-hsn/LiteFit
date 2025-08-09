@@ -15,7 +15,7 @@ const ManageProducts = () => {
             const res = await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/product/delete/${id}`, { withCredentials: true })
             if (res.status === 200) {
                 toast.success('Product deleted successfully.');
-                setTimeout(() => { window.location.reload() }, 1000);
+                setFilteredProducts((prevProduct) => prevProduct.filter((product) => product._id !== id));
             }
         } catch (error) {
             toast.error("Failed to delete product. Please try again");
@@ -80,7 +80,7 @@ const ManageProducts = () => {
                                                 className="w-12 h-12 md:h-16 md:w-16 rounded-full object-cover"
                                             />
                                             <div>
-                                                <h4 className="text-[15px] md:text-lg font-semibold">{product?.name}</h4>
+                                                <Link to={`/shop/c/${product?._id}`} className="text-[15px] text-black no-underline hover:text-red-600 md:text-lg font-semibold">{product?.name}</Link>
                                                 <p className="text-sm text-gray-500">${product?.price}</p>
                                             </div>
                                         </div>

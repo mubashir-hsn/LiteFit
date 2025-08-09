@@ -29,7 +29,7 @@ const AboutBanner = () => {
                             <p className='text-sm text-gray-700 text-justify'>In this digital generation where information can be easily obtained within seconds, business cards still have retained their importance.</p>
                         </div>
                         <div className='p-2'>
-                            <h2 className='my-3 text-2xl font-medium text-black'>Why Choose Us</h2>
+                            <h2 className='my-3 text-2xl font-medium text-black'>Why Choose Us ?</h2>
                             <p className='text-sm text-gray-700 text-justify'>A two or three storey house is the ideal way to maximise the piece of earth on which our home sits, but for older or infirm people.</p>
                         </div>
                     </div>
