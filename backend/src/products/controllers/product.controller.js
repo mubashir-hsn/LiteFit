@@ -19,7 +19,7 @@ export const getAllProducts= async (req, res) => {
 export const createProduct = async (req, res) => {
   try {
     const { name, category, description, price, color, gent ,stock ,sizes } = req.body;
-    const size = JSON.parse(sizes);
+    const size = JSON.parse(sizes) ?? null;
 
     // Check required fields
     if (!name || !category || !description || !price || !color || !gent || !stock) {

@@ -13,7 +13,6 @@ const productSchema = new mongoose.Schema({
     sizes: {
         type: [String],
         enum: ["xs", "s", "m", "l", "xl", "xxl"],
-        default: ["xs", "s", "m", "l", "xl", "xxl"], // Default sizes
       },
     trend: { type: String },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' } 

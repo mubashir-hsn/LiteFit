@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import GetAllProducts from '../../../contextApi/GetAllProducts.jsx';
 import { useParams } from 'react-router-dom';
 import toast from 'react-hot-toast'

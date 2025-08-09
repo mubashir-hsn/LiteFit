@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import GetAllProducts from '../../contextApi/GetAllProducts.jsx';
 import ProductCard from './ProductCard.jsx';
@@ -19,10 +19,10 @@ import GetCategories from '../../contextApi/GetCategories.jsx';
 
 
 const Shop = () => {
-    
+
     const { category } = useParams(); // Extract category from URL
     const [products, loading] = GetAllProducts();
-    const [categories ] = GetCategories();
+    const [categories] = GetCategories();
     const [menFilter, setMenFilter] = useState({ categories: ['all'], color: ['all', 'black', 'blue', 'beige', 'brown', 'grey', 'red', 'white'] });
     const [womenFilter, setWomenFilter] = useState({ categories: ['all'], color: ['all', 'black', 'green', 'gold', 'red', 'yellow'] });
     const { addToCart } = useContext(CartContext);
@@ -53,7 +53,7 @@ const Shop = () => {
         }
     }, [categories]);
 
-    
+
     // set filters
     const filter = {
         ...(
@@ -80,6 +80,7 @@ const Shop = () => {
         if (products.length > 0) {
             applyFilter();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [products, filterState, category]);
 
     const applyFilter = () => {
@@ -116,20 +117,24 @@ const Shop = () => {
 
     return (
         <>
-            <section className='section__container bg-primary-light'>
-                <h1 className='section__header capitalize'>{category} Products</h1>
-                <p className='section__subheader'>
-                    Discover the best picks: Elevate your style with our curated collection of trending {category}'s fashion products!
-                </p>
+            <section className=' bg-[url("assets/casual.jpg")] h-[23rem] bg-fixed' >
+                <div className='flex flex-col justify-center items-center h-[23rem] bg-[#f4e5ec88]'>
+                    <div className='p-14 bg-[#f4e5ecaf] rounded-md'>
+                        <h1 className='section__header capitalize'>{category} Products</h1>
+                        <p className='section__subheader'>
+                            Discover the best picks: Elevate your style with our curated collection of trending {category}&apos;s fashion products!
+                        </p>
+                    </div>
+                </div>
             </section>
             {category === 'women' && <HeroSection />}
             <section className='section__container'>
                 <div className='flex flex-col md:flex-row md:gap-12 gap-8'>
-                    
+
                     <div className='md:w-[17%]'>
                         <ShopFilter filter={filter} filterState={filterState} setfilterState={setFilterState} clearFilter={clearFilter} />
                     </div>
-                    
+
                     <div className='md:w-[87%]'>
                         <h4 className='text-xl font-medium mb-4'>
                             {filteredProducts.length > 0

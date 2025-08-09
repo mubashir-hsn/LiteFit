@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import RatingStar from '../../../components/RatingStar.jsx';
 import { CartContext } from '../../../contextApi/CartContext.jsx';
@@ -36,6 +36,7 @@ const SingleProduct = () => {
     };
 
     getRelatedProducts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Toggle size selection
