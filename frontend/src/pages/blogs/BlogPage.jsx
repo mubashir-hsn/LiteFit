@@ -1,10 +1,16 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import BlogCard from './BlogCard';
+import GetAllBlogs from '../../contextApi/GetAllBlogs.jsx';
 
 const BlogPage = () => {
+
+  const [blogs] = GetAllBlogs();
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+
 
   return (
     <>
@@ -14,7 +20,7 @@ const BlogPage = () => {
       </section>
      
      <section className='p-5 bg-gray-50 overflow-hidden'>
-        <BlogCard/>
+        <BlogCard blogs={blogs}/>
      </section>
 
     </>

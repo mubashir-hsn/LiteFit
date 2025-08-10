@@ -9,6 +9,7 @@ import productRoutes from './src/products/routes/product.route.js'
 import orderRoutes from './src/order/order.route.js'
 import userReviewRoutes from './src/reviews/review.router.js';
 import categoryRoutes from './src/category/category.route.js';
+import blogRoutes from './src/blog/blog.route.js';
 import fileUpload from 'express-fileupload';
 import { v2 as cloudinary } from 'cloudinary';
 
@@ -64,6 +65,7 @@ app.use('/api/product',productRoutes)
 app.use('/api/reviews', userReviewRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/category', categoryRoutes)
+app.use('/api/blog', blogRoutes)
 
 
 

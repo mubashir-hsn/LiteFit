@@ -2,29 +2,29 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const GetCategories = () => {
-    const [categories, setCategories] = useState([]);  
+const GetAllBlogs = () => {
+    const [blogs, setBlogs] = useState([]);  
     const [loading, setLoading] = useState(false); 
 
     useEffect(() => {
-        const getAllCategories = async () => {
+        const getBlogs = async () => {
              setLoading(true);
           try {
-            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/category/`, {
+            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/blog/`, {
               withCredentials: true,
-            });
-            setCategories(response.data);
+            }); 
+            setBlogs(response.data);
           } catch (error) {
             console.error('Error while fetching categories:', error);
           } finally {
             setLoading(false);
           }
         };
-        getAllCategories();
+        getBlogs();
       }, []);
     
 
-    return [categories, loading];
+    return [blogs, loading];
 }
 
-export default GetCategories;
+export default GetAllBlogs;

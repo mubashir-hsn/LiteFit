@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import Logout from '../../../components/Logout';
 import { Link } from 'react-router-dom';
@@ -14,6 +15,7 @@ import {
 import { GoHome } from "react-icons/go";
 import { LuCircleDollarSign } from "react-icons/lu";
 import { BiCategory } from "react-icons/bi";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 const Sidebar = () => {
   const [showUserInfo, setShowUserInfo] = useState(false);
@@ -23,10 +25,10 @@ const Sidebar = () => {
     { link: "/admin/dashboard", icon: RiDashboardLine, label: "Dashboard" },
     { link: "/admin/dashboard/add-product", icon: RiProductHuntLine, label: "Add Product" },
     { link: "/admin/dashboard/add-category", icon: BiCategory, label: "Add Category" },
+    { link: "/admin/dashboard/add-blog", icon: IoMdAddCircleOutline, label: "Create Blog" },
     { link: "/admin/dashboard/manage-products", icon: RiShoppingBag3Line, label: "Manage Products" },
     { link: "/admin/dashboard/all-orders", icon: RiShoppingBag2Line, label: "Orders" },
     { link: "/admin/dashboard/all-payments", icon: LuCircleDollarSign, label: "Payments" },
-    { link: "/admin/dashboard/all-users", icon: RiUserLine, label: "Users" },
     { link: "/admin/dashboard/all-reviews", icon: RiChat3Line, label: "Comments" },
   ]
   const user = [
@@ -74,7 +76,7 @@ const Sidebar = () => {
 
         {/* Sidebar Links */}
 
-        <div className="flex flex-col w-full text-sm text-slate-700 font-medium mt-2">
+        <div className="flex flex-col w-full text-sm text-slate-700 font-medium mt-1">
 
           {
             LinkData.map((data, index) => (

@@ -1,4 +1,3 @@
-import React from 'react'
 import {createBrowserRouter} from "react-router-dom";
 import App from '../App';
 import Home from '../pages/Home/Home.jsx';
@@ -33,6 +32,7 @@ import PaymentHistory from '../Admin/DashboardComponents/Pages/PaymentHistory.js
 import Shop from '../pages/shop/Shop.jsx';
 import CartModal from '../pages/shop/cart/CartModal.jsx';
 import AddCategory from '../Admin/DashboardComponents/Pages/AddCategory.jsx';
+import AddBlog from '../Admin/DashboardComponents/Pages/AddBlog.jsx';
 
   const router = createBrowserRouter([
     {
@@ -81,6 +81,7 @@ import AddCategory from '../Admin/DashboardComponents/Pages/AddCategory.jsx';
         { index: true , element: <Dashboard/>},
         { path:"add-product" , element: <AddProduct/>},
         { path:"add-category" , element: <AddCategory/>},
+        { path:"add-blog" , element: <AddBlog/>},
         { path:"manage-products" , element: <ManageProducts/>},
         { path:"update-product/:id" , element: <UpdateProduct/>},
         { path:"all-orders" , element: <AllOrders/>},
