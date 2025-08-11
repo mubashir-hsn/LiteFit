@@ -48,7 +48,7 @@ export const getUserOrders = async (req, res) => {
   try {
     const { userId } = req.params;
 
-    const orders = await Order.find({ userId }).populate("products.productId", "name price");
+    const orders = await Order.find({ userId }).populate("products.productId", "name price image");
     res.status(200).json(orders);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch orders", error });
@@ -70,7 +70,7 @@ export const getSingleOrder = async (req, res) => {
 // Get all orders (Admin)
 export const getAllOrders = async (req, res) => {
   try {
-    const orders = await Order.find().populate("products.productId", "name price quantity").sort({ createdAt: -1 });
+    const orders = await Order.find().populate("products.productId", "name price quantity image").sort({ createdAt: -1 });
     res.status(200).json(orders);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch orders", error });
