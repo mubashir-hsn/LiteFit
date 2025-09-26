@@ -60,7 +60,7 @@ const Sidebar = () => {
       >
         {/* profile Info user || admin */}
 
-        <Link to="/user/profile" className="no-underline">
+        <Link to={`/user/${authUser?.user?._id}`} className="no-underline">
           <div className="flex items-center text-center my-5 gap-3 py-2 border-b">
             <img
               src={authUser?.user?.profileImg?.url || '/avatar.jpeg'}
@@ -69,7 +69,7 @@ const Sidebar = () => {
               style={{ height: '30px', width: '30px' }}
             />
             <h4 className="font-medium text-dark text-lg">
-              {authUser?.user?.username || 'User Name'}
+              {authUser?.user?.username || 'User'}
             </h4>
           </div>
         </Link>

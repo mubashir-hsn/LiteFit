@@ -10,7 +10,7 @@ const GetCategories = () => {
         const getAllCategories = async () => {
              setLoading(true);
           try {
-            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/category/`, {
+           const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/category/`, {
               withCredentials: true,
             });
             setCategories(response.data);

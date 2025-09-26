@@ -19,7 +19,7 @@ export const getAllProducts= async (req, res) => {
 export const createProduct = async (req, res) => {
   try {
     const { name, category, description, price, color, gent ,stock ,sizes } = req.body;
-    const size = JSON.parse(sizes) ?? null;
+    const size = JSON.parse(sizes) ?? '';
 
     // Check required fields
     if (!name || !category || !description || !price || !color || !gent || !stock) {
@@ -161,9 +161,7 @@ export const updateProduct = async (req, res) => {
     if (req.body.sizes) {
       try {
         updatedData.sizes = JSON.parse(req.body.sizes); // Convert from string to array
-        if (!Array.isArray(updatedData.sizes)) {
-          throw new Error("Sizes must be an array.");
-        }
+        
       } catch (err) {
         return res.status(400).send({ message: "Invalid sizes format. Expecting an array." });
       }

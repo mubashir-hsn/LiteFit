@@ -7,7 +7,7 @@ const SliderCards = ({ products }) => {
     const { addToCart } = useContext(CartContext);
     return (
         <div>
-           <div className="relative mb-5 w-full md:w-[320px] lg:w-[280px] h-[380px] overflow-hidden rounded-lg bg-white shadow-md">
+           <div data-aos='fade-up' className="relative mb-5 w-full md:w-[320px] lg:w-[280px] h-[380px] overflow-hidden rounded-lg bg-white shadow-md">
                 <Link to={`/shop/c/${products?._id}`} className='w-full h-56 box-border overflow-hidden'>
                     <img className="h-56 w-full rounded-t-lg object-cover transition-all duration-300 hover:scale-105" src={products?.image} alt="product image" />
                 </Link>
@@ -26,7 +26,7 @@ const SliderCards = ({ products }) => {
                             <span className="text-xl mr-1 font-bold text-slate-900">${products?.price}</span>
                             <span className="text-[12px] text-slate-900">{products?.oldPrice ? <s>${products?.oldPrice}</s> : null}</span>
                         </p>
-                        <div onClick={() => addToCart(products)} className='flex items-center justify-center cursor-pointer rounded-md px-3 py-2 bg-primary  text-white hover:bg-indigo-500 transition-all duration-300'>
+                        <div onClick={() =>  addToCart({ ...products, size: products?.sizes[0] })} className='flex items-center justify-center cursor-pointer rounded-md px-3 py-2 bg-primary  text-white hover:bg-indigo-500 transition-all duration-300'>
                             <i className="ri-shopping-cart-2-line mr-1 text-xl"></i>
                             <span className='text-center text-sm font-medium uppercase'>Shop</span>
                         </div>

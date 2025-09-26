@@ -1,5 +1,5 @@
 import express from 'express'
-import { confirmPayment, createCheckoutPayment, createOrder, deleteOrder, getAllOrders, getSingleOrder, getUserOrders, updateOrderStatus, webHook } from './order.controller.js';
+import { confirmPayment, createCheckoutPayment, createOrder, deleteOrder, getAllOrders, getSingleOrder, getUserOrders, getUserProfileWithOrders, updateOrderStatus, webHook } from './order.controller.js';
 import verifyToken from '../jwt/verifyToken.js';
 import { verifyAdmin } from '../jwt/VerifyAdmin.js';
 
@@ -10,6 +10,9 @@ router.post("/create-order", verifyToken ,createOrder);
 
 // Get orders for a specific user
 router.get("/user-orders/:userId", verifyToken,getUserOrders);
+
+// Get ordered products for a specific user
+router.get("/user-info/:userId",getUserProfileWithOrders);
 
 // Get single order details
 router.get("/order/:orderId", verifyToken,getSingleOrder);

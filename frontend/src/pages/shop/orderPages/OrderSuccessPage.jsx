@@ -10,7 +10,7 @@ const OrderSuccess = () => {
     
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
-      <div className="bg-white shadow-md rounded-lg p-6 text-center max-w-md w-full">
+      <div className="bg-white shadow-md rounded-lg p-6 text-center max-w-md w-full" data-aos='zoom-in-up'>
         <CheckCircleIcon className="h-16 w-16 text-red-500 mx-auto mb-4" />
         <h1 className="text-2xl font-bold text-gray-800 mb-2 font-[Lora]">
           Order Placed Successfully!
@@ -19,7 +19,7 @@ const OrderSuccess = () => {
           Thank you for your purchase! Your order has been placed and is being
           processed. You can view your order details or continue shopping below.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos='fade-left'>
         <Link
             className="bg-red-500 text-sm  border-2 border-red-500 text-white px-3 py-3 font-medium uppercase hover:bg-white hover:text-red-500 duration-300 transition w-full sm:w-auto"
             to={'/shop/men'}

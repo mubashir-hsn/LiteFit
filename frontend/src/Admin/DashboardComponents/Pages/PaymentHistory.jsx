@@ -40,7 +40,7 @@ const PaymentHistory = () => {
               <div className="mt-4 flex flex-wrap gap-4">
                 {filterOrder.length > 0 ? (
                   filterOrder.map((order, index) => (
-                    <div key={order._id} className="bg-gray-100 text-sm p-5 rounded-lg mb-4 space-y-2">
+                    <div key={order._id} data-aos='zoom-in-up' className="bg-gray-100 text-sm p-5 rounded-lg mb-4 space-y-2">
                       <h3 className="font-semibold">Order #{index + 1}</h3>
                       <p>Order ID: {order._id}</p>
                       <p>Order Total: ${order.totalAmount.toFixed(2)}</p>
@@ -56,7 +56,7 @@ const PaymentHistory = () => {
                     </div>
                   ))
                 ) : (
-                  <p className="text-gray-500">No payment history found.</p>
+                  <p className="text-gray-500" data-aos='fade-left'>No payment history found.</p>
                 )}
               </div>
             </div>

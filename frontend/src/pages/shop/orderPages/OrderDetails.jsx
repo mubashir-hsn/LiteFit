@@ -29,17 +29,17 @@ const OrderDetails = () => {
 
             <div className="w-full p-7">
               {/* Heading */}
-              <div className="w-full border-b-2 border-gray-300">
+              <div className="w-full border-b-2 border-gray-300" data-aos='fade-left' >
                 <h1 className="text-2xl uppercase font-semibold font-[Lora] text-gray-800">
                   Order Details
                 </h1>
               </div>
 
               {/* Products Table */}
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto" data-aos='zoom-in-up'>
                 <table className="w-full mt-8 border bg-white border-gray-300 rounded-lg shadow-sm">
                   <thead>
-                    <tr className="bg-primary text-gray-50 text-sm sm:text-base">
+                    <tr className="bg-primary text-gray-50 text-sm sm:text-base font-[Lora]">
                       <th className="px-4 py-3 border">No</th>
                       <th className="px-4 py-3 border">Products</th>
                       <th className="px-4 py-3 border">Sizes</th>
@@ -66,7 +66,7 @@ const OrderDetails = () => {
                           </div>
                         </td>
                         <td className="px-4 py-2 border text-center uppercase text-gray-600">
-                          {item?.sizes?.join(", ")}
+                          {item?.sizes?.join(", ") || "-"}
                         </td>
                         <td className="px-4 py-2 border text-center">{item?.quantity}</td>
                         <td className="px-4 py-2 border text-center font-semibold">
@@ -89,7 +89,7 @@ const OrderDetails = () => {
               </div>
 
               {/* Payment Status Table */}
-              <div className="overflow-x-auto mt-10">
+              <div className="overflow-x-auto mt-10" data-aos='zoom-in-down'>
                 {/* Heading */}
                 <div className="w-full border-b-2 border-gray-300 mb-4">
                   <h1 className="text-2xl uppercase font-semibold font-[Lora] text-gray-800">
@@ -98,7 +98,7 @@ const OrderDetails = () => {
                 </div>
                 <table className="w-full mt-8 bg-white border border-gray-300 rounded-lg shadow-sm">
                   <thead>
-                    <tr className="bg-primary text-gray-50 text-sm sm:text-base">
+                    <tr className="bg-primary text-gray-50 text-sm sm:text-base font-[Lora]">
                       <th className="px-4 py-3 border">Payment Status</th>
                       <th className="px-4 py-3 border">Track Order</th>
                     </tr>
@@ -125,7 +125,7 @@ const OrderDetails = () => {
 
             {/* Shipping Details Box */}
            
-            <div className="w-full lg:w-[95%] mx-auto bg-white mt-10">
+            <div className="w-full lg:w-[95%] mx-auto bg-white mt-10" data-aos='zoom-in-up'>
               {/* Heading */}
               <div className="bg-primary text-white px-6 py-3">
                 <h1 className="text-xl font-semibold uppercase font-[Lora]">

@@ -7,7 +7,6 @@ import SingleProduct from '../pages/shop/productDetails/SingleProduct.jsx';
 import ContactPage from '../pages/contact/ContactPage.jsx'
 import Login from '../components/Login.jsx';
 import Register from '../components/Register.jsx';
-import UserProfile from '../profile/userprofile/UserProfile.jsx';
 import About from '../pages/About/About.jsx';
 import CartCheckOut from '../pages/shop/cart/CartCheckOut.jsx';
 import OtpVerification from '../components/OtpVerification.jsx';
@@ -33,6 +32,7 @@ import Shop from '../pages/shop/Shop.jsx';
 import CartModal from '../pages/shop/cart/CartModal.jsx';
 import AddCategory from '../Admin/DashboardComponents/Pages/AddCategory.jsx';
 import AddBlog from '../Admin/DashboardComponents/Pages/AddBlog.jsx';
+import User from "../profile/User.jsx";
 
   const router = createBrowserRouter([
     {
@@ -67,9 +67,9 @@ import AddBlog from '../Admin/DashboardComponents/Pages/AddBlog.jsx';
     { path:'/user/otp/:type', element: <OtpVerification/>},
     { path:'/auth', element: <AuthForm/>},
     { path:'/auth/change-password', element: <ChangePassword/>},
-    { path:'/user/profile', element: <UserProfile/>},
+    { path:'/user/:id', element: <User/>},
     { path:"/all-orders" , element: <AllOrders/>},
-    
+   
     {
       path:'/admin/dashboard',
       element: (
@@ -88,7 +88,6 @@ import AddBlog from '../Admin/DashboardComponents/Pages/AddBlog.jsx';
         { path:"all-users" , element: <AllUsers/>},
         { path:"all-reviews" , element: <AllReviews/>},
         { path:"all-payments" , element: <PaymentHistory/>},
-
       ]
     },
     {

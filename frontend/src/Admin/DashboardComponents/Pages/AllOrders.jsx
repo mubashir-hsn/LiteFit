@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import GetAllOrders from "../../../contextApi/GetAllOrders";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useAuth } from "../../../contextApi/AuthProvider.jsx";
 import axios from "axios";
 import toast from 'react-hot-toast';
@@ -10,17 +10,32 @@ const AllOrders = () => {
   const [orders, loading] = GetAllOrders();
   const [filterOrder, setFilterOrder] = useState([]);
   const { authUser } = useAuth();
+  const {id} = useParams();
 
   useEffect(() => {
     const setOrder = () => {
-      if (authUser?.user?.role === "user") {
+      if (id && authUser?.user?.role !=='admin') {
+        const filtered = orders?.filter(
+          (order) => order?.userId === id
+        );
+        setFilterOrder(filtered || []);
+      }
+      else if (!id && authUser?.user?.role !=='admin') {
         const filtered = orders?.filter(
           (order) => order?.userId === authUser?.user?._id
         );
         setFilterOrder(filtered || []);
-      } else {
+      }
+      else if (id && authUser?.user?.role !=='user') {
+        const filtered = orders?.filter(
+          (order) => order?.userId === id
+        );
+        setFilterOrder(filtered || []);
+      }
+       else {
         setFilterOrder(orders || []);
       }
+
     };
     if (orders) setOrder();
   }, [orders, authUser]);

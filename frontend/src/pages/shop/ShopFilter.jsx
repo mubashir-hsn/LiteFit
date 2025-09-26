@@ -5,7 +5,7 @@ const ShopFilter = ({filter,filterState,setfilterState,clearFilter}) => {
     <div className='grid grid-cols-2 sm:grid-cols-3 md:block space-y-5 flex-shrink-0'>
        
          {/* filter for category */}
-        <div className='flex flex-col space-x-2'>
+        <div className='flex flex-col space-x-2' data-aos='fade-up'>
             <h3>Filters</h3> 
             <h4 className='md:mt-5 text-lg font-medium'>Category</h4>
              <hr />
@@ -22,7 +22,7 @@ const ShopFilter = ({filter,filterState,setfilterState,clearFilter}) => {
              }
         </div>
         {/* filter for color */}
-        <div className='flex flex-col space-x-2'>
+        <div className='flex flex-col space-x-2' data-aos='fade-up'>
             <h4 className='text-lg font-medium'>Color</h4>
              <hr />
              {
@@ -38,7 +38,7 @@ const ShopFilter = ({filter,filterState,setfilterState,clearFilter}) => {
              }
         </div>
         {/* filter for price */}
-        <div className='flex flex-col space-x-2'>
+        <div className='flex flex-col space-x-2' data-aos='fade-up'>
             <h4 className='text-lg font-medium'>Price</h4>
              <hr />
              {

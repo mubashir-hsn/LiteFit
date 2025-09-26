@@ -15,6 +15,7 @@
     "@stripe/react-connect-js": "^3.3.20",
     "@stripe/react-stripe-js": "^3.1.1",
     "@stripe/stripe-js": "^5.6.0",
+    "aos": "^2.3.4",
     "axios": "^1.7.7",
     "chart.js": "^4.4.7",
     "clsx": "^2.1.1",

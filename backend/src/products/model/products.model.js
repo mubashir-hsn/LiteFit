@@ -12,10 +12,9 @@ const productSchema = new mongoose.Schema({
     gent: { type: String },
     sizes: {
         type: [String],
-        enum: ["xs", "s", "m", "l", "xl", "xxl"],
       },
     trend: { type: String },
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' } 
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }  
 
 },{ timestamps: true })
 

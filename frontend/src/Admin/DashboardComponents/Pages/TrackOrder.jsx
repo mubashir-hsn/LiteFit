@@ -29,7 +29,7 @@ const TrackOrder = () => {
 
     return (
         <div className="w-full bg-slate-50 py-5">
-            <div className="max-w-5xl mx-auto p-8 bg-white shadow-md rounded-lg mt-10">
+            <div className="max-w-5xl mx-auto p-8 bg-white shadow-md rounded-lg mt-10" data-aos='fade-up'>
                 <h2 className="text-2xl font-semibold capitalize text-primary mb-2 font-[Lora]">
                     Payment {order?.paymentStatus}
                 </h2>
@@ -71,7 +71,7 @@ const TrackOrder = () => {
                     </ul>
                 </div>
 
-                <div className="mt-6 bg-primary-light p-6 rounded-lg space-y-2">
+                <div className="mt-6 bg-primary-light p-6 rounded-lg space-y-2" data-aos='zoom-in-down'>
                     <h3 className="text-xl font-medium text-primary font-[Lora]">Customer Information</h3>
                     <p className="text-gray-600"><strong>Name:</strong> {order?.shippingAddress?.fullName}</p>
                     <p className="text-gray-600"><strong>Email:</strong> {order?.shippingAddress?.email}</p>

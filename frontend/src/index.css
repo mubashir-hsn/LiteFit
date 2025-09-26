@@ -15,5 +15,31 @@
     border-radius: 10px;
   }
 
+  .loader {
+    font-family: 'Great Vibes';
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #ed3849;
+    display: flex;
+    gap: 5px;
+  }
 
+  .loader span {
+    opacity: 0;
+    animation: fadeIn 1s forwards infinite;
+  }
+
+  .loader span:nth-child(1) { animation-delay: 0s; }
+  .loader span:nth-child(2) { animation-delay: 0.2s; }
+  .loader span:nth-child(3) { animation-delay: 0.4s; }
+  .loader span:nth-child(4) { animation-delay: 0.6s; }
+  .loader span:nth-child(5) { animation-delay: 0.8s; }
+  .loader span:nth-child(6) { animation-delay: 1s; }
+  .loader span:nth-child(7) { animation-delay: 1.2s; }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    50% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0.5; }
+  }
   

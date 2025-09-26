@@ -57,7 +57,7 @@ const Dashboard = () => {
 
           {
             boxeData.map((data,index)=>(
-              <div key={index} className="text-center">
+              <div key={index} className="text-center" data-aos='zoom-in-down'>
             <Link to={data?.link} className="no-underline">
               <div className={`${authUser?.user?.role === 'admin' ? "w-52" : "w-72"} text-slate-700 h-44 p-5 flex justify-center items-center shadow-md rounded-xl`} style={{ backgroundColor: data?.bg }}>
                 <div className="font-semibold">

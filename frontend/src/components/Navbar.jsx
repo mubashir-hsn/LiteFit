@@ -37,7 +37,7 @@ const Navbar = () => {
   ];
   const userDropDown = [
     { label: "Dashboard", path: '/user/dashboard', icon: "ri-dashboard-fill" },
-    { label: "Profile", path: '/user/profile', icon: "ri-profile-fill" },
+    { label: "Profile", path: `/user/${authUser?.user?._id}`, icon: "ri-profile-fill" },
     { label: "Your Orders", path: '/user/dashboard/orders', icon: "ri-file-list-3-fill" },
   ];
 

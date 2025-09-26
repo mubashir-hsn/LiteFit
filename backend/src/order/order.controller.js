@@ -246,3 +246,86 @@ export const confirmPayment = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+// get User Profile Info With All Ordered Items
+export const getUserProfileWithOrders = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    // ✅ Validate userId
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid userId format",
+      });
+    }
+
+    const userProfile = await Order.aggregate([
+      // Match orders of the specific user
+      { $match: { userId: new mongoose.Types.ObjectId(userId) } },
+
+      // Unwind products
+      { $unwind: "$products" },
+
+      // Lookup products
+      {
+        $lookup: {
+          from: "products",
+          localField: "products.productId",
+          foreignField: "_id",
+          as: "productDetails",
+        },
+      },
+      { $unwind: "$productDetails" },
+
+      // Group by user
+      {
+        $group: {
+          _id: "$userId",
+          fullName: { $first: "$shippingAddress.fullName" },
+          email: { $first: "$shippingAddress.email" },
+          purchasedItems: {
+            $push: {
+              orderId: "$_id",
+              orderDate: {
+                $dateToString: { format: "%d %b %Y", date: "$createdAt" },
+              },
+              productId: "$products.productId",
+              orderedName: "$products.name",
+              quantity: "$products.quantity",
+              unitPrice: "$products.price",
+              totalPrice: { $multiply: ["$products.price", "$products.quantity"] },
+              productName: "$productDetails.name",
+              productPrice: "$productDetails.price",
+              image: "$productDetails.image",
+              category: "$productDetails.category",
+            },
+          },
+          // ✅ Add total spent
+          totalSpent: { $sum: { $multiply: ["$products.price", "$products.quantity"] } }
+        },
+      },
+    ]);
+
+    if (!userProfile || userProfile.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "No orders found for this user",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "User profile with orders fetched successfully",
+      data: userProfile[0],
+    });
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.message,
+    });
+  }
+};

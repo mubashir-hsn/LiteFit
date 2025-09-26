@@ -38,7 +38,7 @@ const AllReviews = () => {
             ) : (
                 <div className="flex flex-wrap gap-5 mt-6">
                     {filteredReviews.map((review) => (
-                        <div key={review._id} className="bg-slate-50 shrink-0 p-5 w-full md:w-1/2 lg:w-[30%] rounded-md">
+                        <div key={review._id} className="bg-slate-50 shrink-0 p-5 w-full md:w-1/2 lg:w-[30%] rounded-md" data-aos='zoom-in-up'>
                             <div className="flex flex-col gap-1">
                                 <p className="font-medium font-[Lora]">Product: 
                                     <Link to={`/shop/c/${review?.productId?._id}`} className="hover:text-blue-500 ml-2">

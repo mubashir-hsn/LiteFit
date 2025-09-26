@@ -153,7 +153,7 @@ const CartCheckOut = () => {
     <>
       <section className='section__container bg-primary-light'>
         <h1 className='section__header capitalize'>Check Out</h1>
-        <div className='section__subheader'>
+        <div className='section__subheader' data-aos='fade-left'>
           <span className='hover:text-primary text-gray-600'><Link to='/'>Home</Link></span>
           <span><i className="ri-arrow-right-s-line"></i></span>
           <Link to={'/shop/cart'} className='hover:text-primary text-gray-600'>Cart</Link>
@@ -165,57 +165,57 @@ const CartCheckOut = () => {
       <section className='section__container flex flex-col lg:flex-row gap-5 justify-around items-start'>
         <div className='w-full lg:w-[60%] space-y-10 flex flex-col justify-center items-center'>
           {
-            !discountApplied && <div className='w-full bg-primary-light border-t-2 border-primary text-sm p-4 flex justify-start items-center'>
+            !discountApplied && <div data-aos='fade-up' className='w-full bg-primary-light border-t-2 border-primary text-sm p-4 flex justify-start items-center'>
               <i className="mr-4 ri-price-tag-3-line text-lg"></i>
               <Link onClick={handleCoupenCode}> Have a coupon? Click here to enter your code</Link>
             </div>
           }
 
           <div className='w-full flex flex-col items-start justify-center gap-5'>
-            <div className='w-full border-b-2 border-slate-200 '>
+            <div className='w-full border-b-2 border-slate-200 ' data-aos='fade-left'>
               <h1 className='font-[Lora] text-xl uppercase text-left py-2'>Billing Details</h1>
             </div>
-            <form className='w-full flex flex-col items-start justify-center gap-5'>
-              <div className='w-full flex flex-col lg:flex-row items-center justify-center gap-5 font-light'>
+            <form className='w-full flex flex-col items-start justify-center gap-5' data-aos='fade-up'>
+              <div className='w-full flex flex-col lg:flex-row items-center justify-center gap-5 font-light' data-aos='fade-up'>
                 <div className='w-full'>
                   <label htmlFor="fullName">Full Name<sup className='text-primary text-xs'>*</sup></label>
                   <input type="text" disabled name='fullName' value={formData.fullName} onChange={handleChange} id='fullName' className='my-2 w-full py-3 px-4 text-sm border border-slate-300 outline-none' />
                 </div>
               </div>
-              <div className='w-full flex flex-col lg:flex-row items-center justify-center gap-5 font-light'>
+              <div data-aos='fade-up' className='w-full flex flex-col lg:flex-row items-center justify-center gap-5 font-light'>
                 <div className='w-full'>
                   <label htmlFor="phone">Phone<sup className='text-primary text-xs'>*</sup></label>
                   <input type="number" name='phone' value={formData.phone} onChange={handleChange} id='phone' className='my-2 w-full py-3 px-4 text-sm border border-slate-300 outline-none' />
                 </div>
-                <div className='w-full'>
+                <div data-aos='fade-up' className='w-full'>
                   <label htmlFor="email">Email<sup className='text-primary text-xs'>*</sup></label>
                   <input type="email" disabled value={formData.email} onChange={handleChange} name='email' id='email' className='my-2 w-full py-3 px-4 text-sm border border-slate-300 outline-none' />
                 </div>
               </div>
 
-              <div className='w-full'>
+              <div className='w-full' data-aos='fade-up'>
                 <label htmlFor="address">Address<sup className='text-primary text-xs'>*</sup></label>
                 <input type="text" name='address' value={formData.address} onChange={handleChange} placeholder='Street Address' id='address' className='my-2 w-full py-3 px-4 text-sm border border-slate-300 outline-none' />
                 <input type="text" name='address' value={formData.address} onChange={handleChange} placeholder='Apartment,suite,unite etc(optional)' id='address1' className='my-2 w-full py-3 px-4 text-sm border border-slate-300 outline-none' />
               </div>
-              <div className='w-full'>
+              <div className='w-full' data-aos='fade-up'>
                 <label htmlFor="city">Town/City<sup className='text-primary text-xs'>*</sup></label>
                 <input type="text" name='city' value={formData.city} onChange={handleChange} id='city' className='my-2 w-full py-3 px-4 text-sm border border-slate-300 outline-none' />
               </div>
-              <div className='w-full'>
+              <div className='w-full' data-aos='fade-up'>
                 <label htmlFor="country">Country<sup className='text-primary text-xs'>*</sup></label>
                 <input type="text" name='country' value={formData.country} onChange={handleChange} id='country' className='my-2 w-full py-3 px-4 text-sm border border-slate-300 outline-none' />
               </div>
-              <div className='w-full'>
+              <div className='w-full' data-aos='fade-up'>
                 <label htmlFor="postalCode">Post Code/ZIP<sup className='text-primary text-xs'>*</sup></label>
                 <input type="text" name='postalCode' value={formData.postalCode} onChange={handleChange} id='postalCode' placeholder='eg 4001' className='my-2 w-full py-3 px-4 text-sm border border-slate-300 outline-none' />
               </div>
 
-              <div className='w-full'>
+              <div className='w-full' data-aos='fade-up'>
                 <input type="checkbox" checked name="order" id="order" className='p-2 text-xl mr-3' />
                 <label htmlFor="order">Notes about your order, e.g. special notes for delivery.</label>
               </div>
-              <div className='w-full'>
+              <div className='w-full' data-aos='fade-up'>
                 <label htmlFor="ordernote">Order notes<sup className='text-primary text-xs'>*</sup></label>
                 <input type="text" name='ordernote' value={formData.ordernote} onChange={handleChange} id='ordernote' placeholder='Notes about your order, e.g. special notes for delivery.' className='my-2 w-full py-3 px-4 text-sm border border-slate-300 outline-none' />
               </div>
@@ -223,7 +223,7 @@ const CartCheckOut = () => {
           </div>
         </div>
 
-        <div className='w-full md:w-[40%] lg:w-[30%] space-y-4  mt-5 rounded-md flex flex-col items-start justify-center'>
+        <div data-aos='fade-up' className='w-full md:w-[40%] lg:w-[30%] space-y-4  mt-5 rounded-md flex flex-col items-start justify-center'>
 
           {/* Discount Code Section */}
 

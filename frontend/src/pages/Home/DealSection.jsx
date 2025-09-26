@@ -54,7 +54,7 @@ const DealSection = () => {
             {/* Deals Banner Section */}
             <section className="section__container relative bg-primary-light flex justify-around items-center flex-wrap gap-20 lg:gap-0">
                         <div className='hidden lg:block z-[1]'>
-                            <div className='relative space-y-8 text-3xl font-medium'>
+                            <div className='relative space-y-8 text-3xl font-medium' data-aos='fade-up'>
                                 <p className='text-red-300'> Clothings Hot </p>
                                 <p>Shoe Collection</p>
                                 <p className='text-red-300'>Accessories</p>
@@ -62,11 +62,11 @@ const DealSection = () => {
                             </div>
                         </div>
                         <div className='w-48 hidden lg:block lg:h-[70%] bg-red-50 absolute top-16 left-0'></div>
-                        <div className="relative">
+                        <div className="relative" data-aos='fade-left'>
                             <img src={dealImg} alt="Deal Banner" />
                             <div className='absolute w-24 h-24 rounded-full bg-gray-900 text-white -top-6 right-0 flex flex-col items-center justify-center'><p>Sale of</p><p className='text-lg font-medium'>$39.99</p></div>
                         </div>
-                        <div className="flex flex-col items-start justify-start gap-5">
+                        <div className="flex flex-col items-start justify-start gap-5" data-aos='fade-up'>
                             <div className=' space-y-3'>
                                 <h5 className='text-lg text-primary font-medium font-[Lora]'>Deal Of The Month</h5>
                                 <h2 className='text-3xl text-gray-800 md:text-4xl font-semibold'>Multi-pocket Chest  <br /> Bag Black</h2>

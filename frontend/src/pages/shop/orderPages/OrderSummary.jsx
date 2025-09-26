@@ -16,7 +16,7 @@ const OrderSummary = () => {
     <>
       {/* Discount Code Section */}
       {cartItems.length > 0 && (
-        <div className='py-4 px-6'>
+        <div className='py-4 px-6' data-aos='fade-right'>
           <h2 className='text-xl font-[Lora] uppercase'>Discount codes</h2>
           <div className='flex mt-4'>
             <input

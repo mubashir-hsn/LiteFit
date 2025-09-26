@@ -30,7 +30,7 @@ const Banner = () => {
       <Slider {...settings}>
         {/* Slide 1 */}
         <div className="section__container header__container  slider-item hero-1">
-          <div className="text-left header__content relative md:pl-20 bg-opacity-75 p-4">
+          <div className="text-left header__content relative md:pl-20 bg-opacity-75 p-4" data-aos='fade-left'>
             <h4 className="uppercase">Up to 20% Discount On</h4>
             <h1 className="py-3">Men's Fashion</h1>
             <p>Discover the latest trends and express your unique style with our Men & Women Fashion website.</p>
@@ -55,7 +55,7 @@ const Banner = () => {
 
         {/* Slide 2 */}
         <div className=" section__container header__container slider-item hero-2">
-          <div className="text-left header__content relative md:pl-20 bg-opacity-75 p-4">
+          <div className="text-left header__content relative md:pl-20 bg-opacity-75 p-4" data-aos='fade-left'>
             <h4 className="uppercase">Limited Time Offer</h4>
             <h1 className="py-3">Women's Collection</h1>
             <p>Explore our curated collection of clothing, accessories, and footwear for every occasion.</p>
@@ -79,7 +79,7 @@ const Banner = () => {
         </div>
 
         {/* Slide 3 */}
-        <div className=" section__container md:block hidden header__container slider-item hero-3">
+        <div className=" section__container md:block hidden header__container slider-item hero-3" data-aos='fade-left'>
         <div className="flex items-center justify-center relative md:pl-20 bg-opacity-75 p-4">
               <Link to={'/shop/women'} className='mt-24 md:mt-44 md:ml-24'>
               <button className="animated-button">

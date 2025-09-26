@@ -37,11 +37,12 @@ const BlogCard = ({ blogs }) => {
             key={blog._id}
             className='blog__card cursor-pointer transition-all duration-300 hover:scale-105'
             onClick={() => setSelectedBlog(blog)}
+            data-aos='zoom-in-up'
           >
-            <img src={blog.imageUrl} alt='BlogImg' className='w-full h-48 object-cover rounded-t-lg' />
+            <img src={blog.imageUrl} alt='BlogImg' className='w-full h-48 object-cover' />
             <div className='blog__card__content p-4'>
               <h6 className='text-gray-600'>{blog.subtitle}</h6>
-              <h4 className='text-lg font-semibold'>{blog.title}</h4>
+              <h4 className='text-lg font-medium'>{blog.title}</h4>
               <p className='text-gray-500 text-sm'>
                 {
                   new Date(blog?.createdAt).toLocaleDateString('en-GB', {
@@ -58,7 +59,7 @@ const BlogCard = ({ blogs }) => {
 
       {selectedBlog && (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center px-4 z-50'>
-          <div className='bg-white p-5 space-y-3 rounded-lg max-w-4xl w-full shadow-lg overflow-y-auto max-h-[95vh]'>
+          <div className='bg-white p-5 space-y-3 rounded-lg max-w-5xl w-full shadow-lg overflow-y-auto max-h-[95vh]'>
             <div className='flex justify-between items-center p-4'>
               <h3 className='text-2xl py-4 font-semibold font-[Lora]'>{selectedBlog.title}</h3>
               <button onClick={() => setSelectedBlog(null)} className='text-gray-500 hover:text-gray-700'>

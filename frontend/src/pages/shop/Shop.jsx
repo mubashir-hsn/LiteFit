@@ -7,16 +7,6 @@ import { CartContext } from '../../contextApi/CartContext.jsx';
 import HeroSection from './women/HeroSection.jsx';
 import GetCategories from '../../contextApi/GetCategories.jsx';
 
-// const menFilter = {
-//     categories: ['all', 'accessories', 'kurta', 'pentshirt', 'pentcoat', 'hoodie', 'footwear'],
-//     color: ['all', 'black', 'blue', 'beige', 'brown', 'grey', 'red', 'white'],
-// }
-// const womenFilter = {
-//     categories: ['all', 'accessories', 'cosmetics', 'dress', 'footwear'],
-//     color: ['all', 'black', 'green', 'gold', 'red', 'yellow'],
-// }
-
-
 
 const Shop = () => {
 
@@ -119,7 +109,7 @@ const Shop = () => {
         <>
             <section className={`${category==='men' ? 'bg-[url("assets/casual.jpg")] ' : 'bg-[url("assets/category-4.jpg")] '} h-[23rem] bg-fixed`}>
                 <div className='flex flex-col justify-center items-center h-[23rem] bg-[#f4e5ecd5]'>
-                    <div>
+                    <div data-aos='fade-right'>
                         <h1 className='section__header capitalize'>{category} Products</h1>
                         <p className='section__subheader'>
                             Discover the best picks: Elevate your style with our curated collection of trending {category}&apos;s fashion products!

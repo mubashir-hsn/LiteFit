@@ -24,110 +24,150 @@ export const CartProvider = ({ children }) => {
         }
     }, [cartItems, setcount]);
 
-    // Function to handle size selection
-    const handleProductSize = (item) => {
-        return item.size && Array.isArray(item.size) && item.size.length > 0 ? item.size : ["xs"];
-    };
 
-    // Add to cart function
-    const addToCart = (item) => {
-        const selectedSize = handleProductSize(item);
-        let isDuplicate = false; // Flag to track duplicate size
+  // Add to cart function
+const addToCart = (item) => {
+    const selectedSize = item.size;
 
-        setCartItems((prevItems) => {
-            return prevItems.map((cartItem) => {
-                if (cartItem._id === item._id) {
-                    // Check if any selected size is already in the cart for this product
-                    if (cartItem.size.some(size => selectedSize.includes(size))) {
-                        isDuplicate = true; // Set flag to true if duplicate size found
-                        return cartItem; // Return as is (no modification)
-                    }
+    setCartItems((prevItems) => {
+        const sameProductSameSize = prevItems.find(
+            cartItem => cartItem._id === item._id && cartItem.size === selectedSize
+        );
 
-                    // Append new size if it's not already in the cart
-                    return {
-                        ...cartItem,
-                        size: [...cartItem.size, ...selectedSize]
-                    };
-                }
-                return cartItem;
-            }).concat(
-                // If product isn't in cart, add it as a new entry
-                prevItems.some(cartItem => cartItem._id === item._id) ? [] : [{ ...item, size: selectedSize, quantity: 1 ,stock: item.stock }]
-            );
-        });
+        const totalStock = item.stock; // total stock from DB
+        const totalInCart = prevItems
+            .filter(cartItem => cartItem._id === item._id)
+            .reduce((sum, cartItem) => sum + cartItem.quantity, 0);
 
-        if (isDuplicate) {
+        // ❌ Check if adding will exceed stock
+        if (totalInCart >= totalStock) {
             Swal.fire({
                 position: "top-end",
                 icon: "error",
-                title: "Product with this size is already in the cart.",
+                title: "Cannot add more than available stock!",
                 showConfirmButton: false,
-                timer: 1000
+                timer: 1500
             });
-        } else {
+            return prevItems;
+        }
+
+        // ⚠️ Low stock warning
+        const remaining = totalStock - (totalInCart + 1);
+        if (remaining > 0 && remaining <= 2) {
+            Swal.fire({
+                position: "top-end",
+                icon: "warning",
+                title: `Only ${remaining} item${remaining > 1 ? 's' : ''} left in stock!`,
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        // ✅ If same size exists → increase quantity + success alert
+        if (sameProductSameSize) {
             Swal.fire({
                 position: "top-end",
                 icon: "success",
-                title: "Product added to cart.",
+                title: `Quantity updated for size ${selectedSize || "-"}.`,
                 showConfirmButton: false,
-                timer: 1000
+                timer: 1000,
             });
-        }
-    };
 
-    // Increase quantity of an item but also check if quantity increase from stop it show toast message
-
-    const increaseQuantity = (id) => {
-        setCartItems((prevItems) =>
-            prevItems.map((cartItem) => {
-                if (cartItem._id === id) {
-                    if (cartItem.quantity < cartItem.stock) {
-                        const newQuantity = cartItem.quantity + 1;
-                        const remaining = cartItem.stock - newQuantity;
-    
-                        if (remaining > 0 && remaining <= 2) {
-                            Swal.fire({
-                                position: "top-end",
-                                icon: "warning",
-                                title: `Only ${remaining} item${remaining > 1 ? 's' : ''} left in stock!`,
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        }
-    
-                        return { ...cartItem, quantity: newQuantity };
-                    } else {
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "error",
-                            title: "No more stock available!",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        return cartItem;
-                    }
+            return prevItems.map(cartItem => {
+                if (cartItem._id === item._id && cartItem.size === selectedSize) {
+                    return { ...cartItem, quantity: cartItem.quantity + 1 };
                 }
                 return cartItem;
-            })
-        );
-    };
-    
+            });
+        }
 
-    // Decrease quantity of an item
-    const decreaseQuantity = (id) => {
-        setCartItems((prevItems) =>
-            prevItems.map((cartItem) =>
-                cartItem._id === id
-                    ? { ...cartItem, quantity: Math.max(cartItem.quantity - 1, 1) } // Ensure quantity doesn't go below 1
-                    : cartItem
-            )
-        );
-    };
+        // ✅ If new size → add new entry + success alert
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `Product (Size: ${selectedSize || "-"}) added to cart.`,
+            showConfirmButton: false,
+            timer: 1000,
+        });
 
-    // Remove item from cart
-    const removeFromCart = (id) => {
-        setCartItems((prevItems) => prevItems.filter((cartItem) => cartItem._id !== id));
-    };
+        return [
+            ...prevItems,
+            {
+                ...item,
+                size: selectedSize,
+                quantity: 1,
+                stock: totalStock
+            }
+        ];
+    });
+};
+
+
+
+
+// Increase quantity for a specific product size
+
+const increaseQuantity = (id, size) => {
+    setCartItems((prevItems) => {
+        const product = prevItems.find(cartItem => cartItem._id === id);
+        const totalStock = product ? product.stock : 0;
+
+        const totalInCart = prevItems
+            .filter(cartItem => cartItem._id === id)
+            .reduce((sum, cartItem) => sum + cartItem.quantity, 0);
+
+        if (totalInCart >= totalStock) {
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "No more stock available!",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            return prevItems;
+        }
+
+        const remaining = totalStock - (totalInCart + 1);
+        if (remaining > 0 && remaining <= 2) {
+            Swal.fire({
+                position: "top-end",
+                icon: "warning",
+                title: `Only ${remaining} item${remaining > 1 ? 's' : ''} left in stock!`,
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        return prevItems.map(cartItem => {
+            if (cartItem._id === id && cartItem.size === size) {
+                return { ...cartItem, quantity: cartItem.quantity + 1 };
+            }
+            return cartItem;
+        });
+    });
+};
+
+
+// Decrease quantity for a specific product size
+const decreaseQuantity = (id, size) => {
+    setCartItems((prevItems) =>
+        prevItems.map((cartItem) =>
+            cartItem._id === id && cartItem.size === size
+                ? { ...cartItem, quantity: Math.max(cartItem.quantity - 1, 1) }
+                : cartItem
+        )
+    );
+};
+
+// Remove a specific size of a product from the cart
+const removeFromCart = (id, size) => {
+    setCartItems((prevItems) =>
+        prevItems.filter(
+            (cartItem) => !(cartItem._id === id && cartItem.size === size)
+        )
+    );
+};
+
 
     // Clear cart
     const clearCart = () => {
@@ -138,7 +178,7 @@ export const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ cartItems, setCartItems, handleProductSize, addToCart, increaseQuantity, decreaseQuantity, removeFromCart, clearCart }}>
+        <CartContext.Provider value={{ cartItems, setCartItems, addToCart, increaseQuantity, decreaseQuantity, removeFromCart, clearCart }}>
             {children}
         </CartContext.Provider>
     );

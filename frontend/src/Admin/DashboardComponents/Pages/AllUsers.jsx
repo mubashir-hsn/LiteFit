@@ -3,6 +3,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import avatar from '../../../assets/avatar.png';
 import GetAllUsers from '../../../contextApi/GetAllUsers';
+import {Link} from 'react-router-dom';
 
 const AllUsers = () => {
   const [users, loading, setUsers] = GetAllUsers();
@@ -77,7 +78,7 @@ const AllUsers = () => {
                       <div className="flex gap-2 lg:gap-4">
                         <span className="font-bold text-primary">{index + 1}.</span>
                         <div className="flex flex-col gap-2">
-                          <div className="flex gap-3 items-start">
+                          <Link to={`/user/${user?._id}`} className="flex gap-3 items-start">
                             <div className="">
                               <img
                                 src={user?.profileImage || avatar}
@@ -105,7 +106,7 @@ const AllUsers = () => {
                                 </span>
                               </div>
                             </div>
-                          </div>
+                          </Link>
                         </div>
                       </div>
 

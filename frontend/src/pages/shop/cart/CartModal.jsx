@@ -14,7 +14,7 @@ const CartModal = () => {
         <>
             <section className='section__container bg-primary-light'>
                 <h1 className='section__header capitalize'>Shopping Cart</h1>
-                <div className='section__subheader'>
+                <div className='section__subheader' data-aos='fade-left'>
                     <span className='hover:text-primary text-gray-600'><Link to='/'>Home</Link></span>
                     <span><i className="ri-arrow-right-s-line"></i></span>
                     <span className='text-gray-500'>Shop</span>
@@ -24,7 +24,7 @@ const CartModal = () => {
             </section>
 
             <section className='w-[90%] pt-10 mx-auto pb-0'>
-                <div className='flex justify-between items-center '>
+                <div className='flex justify-between items-center ' data-aos='fade-up'>
                     <h4 className='text-xl md:text-2xl uppercase font-medium font-[Lora] '>Your Cart Items</h4>
                 </div>
                 <div className='border-b-2 mt-3 mb-5'></div>
@@ -40,7 +40,7 @@ const CartModal = () => {
                                <div>
                                    {
                                     cartItems.map((item, index) => (
-                                        <div key={index} className='flex flex-col border-b md:flex-row md:items-center md:justify-between md:shadow-md md:p-5 p-2 mb-4'>
+                                        <div key={index} className='flex flex-col border-b md:flex-row md:items-center md:justify-between md:shadow-md md:p-5 p-2 mb-4' data-aos='zoom-in-up'>
                                             <div className='w-full min-w-full place-content-between place-items-start grid grid-cols-2 lg:grid-cols-3 py-2'>
                                                 {/* Product image & item number */}
                                                 <div className='flex justify-center items-center'>
@@ -58,16 +58,16 @@ const CartModal = () => {
                                                 {/* Product quantity & delete */}
                                                 <div className='flex justify-end items-center mt-2'>
                                                     <button
-                                                        onClick={() => decreaseQuantity(item._id)}
+                                                        onClick={() => decreaseQuantity(item._id,item?.size)}
                                                         className='flex justify-center items-center size-6 px-1.5 rounded-full bg-gray-200 text-gray-700 hover:bg-primary hover:text-white ml-6'
                                                     >-</button>
                                                     <span className='px-2 text-center mx-1'>{item.quantity}</span>
                                                     <button
-                                                        onClick={() => increaseQuantity(item._id)}
+                                                        onClick={() => increaseQuantity(item._id,item.size)}
                                                         className='flex justify-center items-center size-6 px-1.5 rounded-full bg-gray-200 text-gray-700 hover:bg-primary hover:text-white'
                                                     >+</button>
                                                     <div className='ml-5'>
-                                                        <button onClick={() => removeFromCart(item._id)} className='bg-primary hover:bg-primary-dark px-1 rounded text-white mr-2'><i className="ri-delete-bin-6-fill"></i></button>
+                                                        <button onClick={() => removeFromCart(item._id,item.size)} className='bg-primary hover:bg-primary-dark px-1 rounded text-white mr-2'><i className="ri-delete-bin-6-fill"></i></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -79,7 +79,7 @@ const CartModal = () => {
 
 
                             ) : (
-                                <div className='flex flex-col gap-5 items-center justify-center'>
+                                <div className='flex flex-col gap-5 items-center justify-center' data-aos='fade-up'>
                                     <p className='font-medium'>Your cart is empty.</p>
                                     <Link to={'/'} className='py-3 px-4 text-lg rounded-sm bg-slate-700 text-white'>Shop Now</Link>
                                 </div>
