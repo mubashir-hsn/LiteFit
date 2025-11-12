@@ -33,7 +33,6 @@ import CartModal from '../pages/shop/cart/CartModal.jsx';
 import AddCategory from '../Admin/DashboardComponents/Pages/AddCategory.jsx';
 import AddBlog from '../Admin/DashboardComponents/Pages/AddBlog.jsx';
 import User from "../profile/User.jsx";
-import DummyData from "../pages/dummydata/DummyData.jsx";
 
   const router = createBrowserRouter([
     {
