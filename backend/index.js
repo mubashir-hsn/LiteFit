@@ -21,6 +21,8 @@ const app = express()
 const PORT = process.env.PORT || 4000;
 const MONGODB_URI = process.env.MONGODB_URI ;
 
+// This is essential for secure cookies (secure: true) and sameSite: 'none' to work correctly.
+app.set('trust proxy', 1);
 
 // middleware setup
 app.use(express.json({limit: '50mb'}))
