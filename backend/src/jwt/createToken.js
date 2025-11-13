@@ -12,11 +12,12 @@ const generateToken = async (userId, res) => {
 
     // Set the token as a cookie
     res.cookie('jwt', token, {
-      httpOnly: true, 
-      secure: true,  
-      sameSite: 'none',  
-      maxAge: 7 * 24 * 60 * 60 * 1000
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',  // true on Vercel
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
+    
  
     await User.findByIdAndUpdate(userId , {token});
     return token;
