@@ -28,7 +28,7 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors({
-  origin: ['https://lite-fit.vercel.app'],
+  origin: ['https://lite-fit.vercel.app',],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE','OPTIONS'],
 }));
