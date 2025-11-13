@@ -12,9 +12,10 @@ const generateToken = async (userId, res) => {
 
     // Set the token as a cookie
     res.cookie('jwt', token, {
-      httpOnly: true,      // Prevents client-side JavaScript from accessing the cookie
-      secure: process.env.NODE_ENV === 'production',  // Use secure cookies in production (HTTPS)
-      sameSite: 'strict',  // Ensures the cookie is only sent for same-site requests
+      httpOnly: true, 
+      secure: true,  
+      sameSite: 'none',  
+      maxAge: 7 * 24 * 60 * 60 * 1000
     });
  
     await User.findByIdAndUpdate(userId , {token});
