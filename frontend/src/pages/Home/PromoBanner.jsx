@@ -24,12 +24,12 @@ const PromoBanner = () => {
 
          <section className='section__container' id='parallexbox' data-aos='fade-up'>
             <div className='effect h-full w-full content-center py-10 backdrop-blur-sm'>
-               <div data-aos='fade-right' className="effect2 py-20 w-[90%] mx-auto flex flex-col items-center justify-center rounded-3xl text-black bg-cover bg-no-repeat bg-center ">
+               <div data-aos='fade-right' className="effect2 py-20 px-5 w-full md:w-[90%] mx-auto flex flex-col items-center justify-center rounded-3xl text-black bg-cover bg-no-repeat bg-center ">
                   <h1 className="text-xl md:text-2xl text-center font-medium py-5">Subscribed And Stay Updated On Our <br /> Latest Collections.</h1>
 
                   <div className="join mt-5 outline-none">
-                     <input className=" w-auto md:w-[27rem] p-4 focus:outline-none focus:border-none outline-none join-item" required placeholder="Enter your email" />
-                     <button className="uppercase font-medium tracking-wider px-4 py-4 text-center join-item rounded-r-full bg-red-500 border-none hover:bg-indigo-500 text-white">Subscribe</button>
+                     <input className=" w-auto md:w-[27rem] p-2 text-sm md:text-lg md:p-4 focus:outline-none focus:border-none outline-none join-item" required placeholder="Enter your email" />
+                     <button className="uppercase font-medium tracking-wider text-sm md:text-lg px-2 py-2 md:px-4 md:py-4 text-center join-item rounded-r-full bg-red-500 border-none hover:bg-indigo-500 text-white">Subscribe</button>
                   </div>
                </div>
             </div>
