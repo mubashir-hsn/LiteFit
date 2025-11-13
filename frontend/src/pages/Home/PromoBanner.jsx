@@ -28,7 +28,7 @@ const PromoBanner = () => {
                   <h1 className="text-xl md:text-2xl text-center font-medium py-5">Subscribed And Stay Updated On Our <br /> Latest Collections.</h1>
 
                   <div className="join mt-5 outline-none">
-                     <input className=" md:w-[27rem] p-4 focus:outline-none focus:border-none outline-none join-item" required placeholder="Enter your email" />
+                     <input className=" w-auto md:w-[27rem] p-4 focus:outline-none focus:border-none outline-none join-item" required placeholder="Enter your email" />
                      <button className="uppercase font-medium tracking-wider px-4 py-4 text-center join-item rounded-r-full bg-red-500 border-none hover:bg-indigo-500 text-white">Subscribe</button>
                   </div>
                </div>
