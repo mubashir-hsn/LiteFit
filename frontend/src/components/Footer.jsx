@@ -55,8 +55,8 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <div className="footer__bar" data-aos='fade-left'>
-        Copyright © 2025 by Litefit. All rights reserved.
+      <div className="footer__bar py-4">
+        © 2025 by Litefit. All rights reserved.
       </div>
     </footer>
   )
