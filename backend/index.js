@@ -24,17 +24,19 @@ const MONGODB_URI = process.env.MONGODB_URI ;
 // This is essential for secure cookies (secure: true) and sameSite: 'none' to work correctly.
 app.set('trust proxy', 1);
 
-// middleware setup
-app.use(express.json({limit: '50mb'}))
-app.use(cookieParser())
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+// cors setup.
 app.use(cors({
   origin: ['https://lite-fit.vercel.app',],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE','OPTIONS'],
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
+// middleware setup.
+app.use(express.json({limit: '50mb'}))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(cookieParser())
 
 app.use(fileUpload({
   useTempFiles:true,
