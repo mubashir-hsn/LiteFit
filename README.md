@@ -54,28 +54,108 @@ It provides users with a sleek shopping experience, secure payments via **Stripe
 
 ```
 LiteFit/
-│
-├── frontend/             # React + Vite Frontend
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   ├── hooks/
-│   │   └── App.jsx
-│   ├── public/
-│   ├── package.json
-│   └── vite.config.js
-│
-├── backend/              # Node.js + Express Backend
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   ├── middlewares/
-│   ├── config/
+├── .gitignore
+├── README.md
+├── backend/
 │   ├── index.js
-│   └── package.json
-│
-└── README.md
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── vercel.json
+│   └── src/
+│       ├── blog/
+│       │   ├── blog.controller.js
+│       │   ├── blog.model.js
+│       │   └── blog.route.js
+│       ├── category/
+│       │   ├── category.controller.js
+│       │   ├── category.model.js
+│       │   └── category.route.js
+│       ├── jwt/
+│       │   ├── createToken.js
+│       │   ├── VerifyAdmin.js
+│       │   └── verifyToken.js
+│       ├── middleware/
+│       │   ├── emailConfig.js
+│       │   ├── isVerifiedUserEmail.js
+│       │   └── sendEmail.js
+│       ├── order/
+│       │   ├── order.controller.js
+│       │   ├── order.model.js
+│       │   └── order.route.js
+│       ├── products/
+│       │   ├── controllers/
+│       │   │   └── product.controller.js
+│       │   ├── model/
+│       │   │   └── products.model.js
+│       │   └── routes/
+│       │       └── product.route.js
+│       ├── reviews/
+│       │   ├── review.model.js
+│       │   ├── review.router.js
+│       │   └── reviews.controller.js
+│       └── users/
+│           ├── controllers/
+│           │   └── user.controller.js
+│           ├── models/
+│           │   └── user.model.js
+│           └── routes/
+│               └── user.route.js
+└── frontend/
+    ├── .gitignore
+    ├── eslint.config.js
+    ├── index.html
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.js
+    ├── README.md
+    ├── tailwind.config.js
+    ├── vite.config.js
+    ├── public/
+    │   ├── admin.png
+    │   ├── avatar.jpeg
+    │   ├── bg-main.svg
+    │   ├── fav-icon.png
+    │   ├── hero-1.jpg
+    │   └── ...
+    └── src/
+        ├── App.css
+        ├── App.jsx
+        ├── index.css
+        ├── main.jsx
+        ├── Admin/
+        │   └── DashboardComponents/
+        │       └── ... (Dashboard pages like AddProduct.jsx, etc.)
+        ├── assets/
+        │   └── ... (images: hero-1.jpg, category-1.jpg, etc.)
+        ├── components/
+        │   ├── AuthForm.jsx
+        │   ├── Footer.jsx
+        │   ├── Login.jsx
+        │   └── ... (Navbar.jsx, etc.)
+        ├── contextApi/
+        │   ├── AuthProvider.jsx
+        │   ├── CartContext.jsx
+        │   └── ... (GetAllProducts.jsx, etc.)
+        ├── data/
+        │   ├── blogs.json
+        │   └── products.json
+        └── pages/
+            ├── About/
+            │   └── About.jsx
+            ├── blogs/
+            │   └── Blogs.jsx
+            ├── categories/
+            │   └── CategoryPage.jsx
+            ├── contact/
+            │   └── ContactPage.jsx
+            ├── Home/
+            │   └── Home.jsx
+            ├── search/
+            │   └── Search.jsx
+            └── shop/
+                ├── ProductCard.jsx
+                ├── Shop.jsx
+                └── ... (subdirs: cart/, orderPages/, etc.)
 ```
 
 ---
@@ -157,7 +237,7 @@ The **User Dashboard** allows customers to:
 ## 👨‍💻 Author
 
 **Mubashar Hassan**\
-📧 [Email](mailto\:mubazi80@example.com)\
+📧 [Email](mailto:mubazi80@example.com)\
 💼 [LinkedIn](https://linkedin.com/in/mubashir-hsn)\
 🐙 [GitHub](https://github.com/mubashir-hsn)
 
@@ -174,6 +254,5 @@ This project is licensed under the **MIT License** – feel free to use and modi
 If you like this project, don’t forget to **star ⭐ the repository** and share it with your friends!
 
 ---
-
 
 npm run dev
